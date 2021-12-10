@@ -93,10 +93,18 @@
 		AF0EF0262763853A00A98CC0 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				AF0EF03927638C9500A98CC0 /* FeadFeature */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		AF0EF03927638C9500A98CC0 /* FeadFeature */ = {
+			isa = PBXGroup;
+			children = (
 				AF0EF0272763854600A98CC0 /* FeedItem.swift */,
 				AF0EF0292763865B00A98CC0 /* FeedLoader.swift */,
 			);
-			path = Sources;
+			path = FeadFeature;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
