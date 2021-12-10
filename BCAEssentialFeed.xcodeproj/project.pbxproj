@@ -11,6 +11,7 @@
 		AF0EF0172763847C00A98CC0 /* BCAEssentialFeed.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF0EF00C2763847B00A98CC0 /* BCAEssentialFeed.framework */; };
 		AF0EF01C2763847C00A98CC0 /* BCAEssentialFeedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF0EF01B2763847C00A98CC0 /* BCAEssentialFeedTests.swift */; };
 		AF0EF01D2763847C00A98CC0 /* BCAEssentialFeed.h in Headers */ = {isa = PBXBuildFile; fileRef = AF0EF00F2763847C00A98CC0 /* BCAEssentialFeed.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AF0EF0282763854600A98CC0 /* FeedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF0EF0272763854600A98CC0 /* FeedItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +30,7 @@
 		AF0EF0102763847C00A98CC0 /* BCAEssentialFeed.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = BCAEssentialFeed.docc; sourceTree = "<group>"; };
 		AF0EF0162763847C00A98CC0 /* BCAEssentialFeedTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BCAEssentialFeedTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF0EF01B2763847C00A98CC0 /* BCAEssentialFeedTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BCAEssentialFeedTests.swift; sourceTree = "<group>"; };
+		AF0EF0272763854600A98CC0 /* FeedItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +73,7 @@
 		AF0EF00E2763847B00A98CC0 /* BCAEssentialFeed */ = {
 			isa = PBXGroup;
 			children = (
+				AF0EF0262763853A00A98CC0 /* Sources */,
 				AF0EF00F2763847C00A98CC0 /* BCAEssentialFeed.h */,
 				AF0EF0102763847C00A98CC0 /* BCAEssentialFeed.docc */,
 			);
@@ -83,6 +86,14 @@
 				AF0EF01B2763847C00A98CC0 /* BCAEssentialFeedTests.swift */,
 			);
 			path = BCAEssentialFeedTests;
+			sourceTree = "<group>";
+		};
+		AF0EF0262763853A00A98CC0 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				AF0EF0272763854600A98CC0 /* FeedItem.swift */,
+			);
+			path = Sources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -194,6 +205,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF0EF0282763854600A98CC0 /* FeedItem.swift in Sources */,
 				AF0EF0112763847C00A98CC0 /* BCAEssentialFeed.docc in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -397,6 +409,7 @@
 		AF0EF0242763847C00A98CC0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -418,6 +431,7 @@
 		AF0EF0252763847C00A98CC0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
