@@ -11,7 +11,7 @@ class RemoteFeedLoaderTests: XCTestCase {
         
     }
     
-    func teste_load_requestDataFromURL() {
+    func teste_load_requestsDataFromURL() {
         let url = URL(string: "https://a-given-url.com")!
         let (sut, client) = makeSUT(url: url)
         
