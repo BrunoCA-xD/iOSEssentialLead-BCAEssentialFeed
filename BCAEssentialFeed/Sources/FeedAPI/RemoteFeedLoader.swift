@@ -30,9 +30,8 @@ public final class RemoteFeedLoader {
             switch result {
             case .success(let resultTuple):
                 if resultTuple.response.statusCode == 200,
-                    let root = try? JSONDecoder().decode(Root.self, from: resultTuple.data) {
-                    let feedItems = root.items.map { $0.feedItem }
-                    completion(.success(feedItems))
+                   let items = try? FeedItemsMapper.map(resultTuple.data, resultTuple.response) {
+                    completion(.success(items))
                 } else {
                     completion(.failure(.invalidData))
                 }
@@ -43,43 +42,50 @@ public final class RemoteFeedLoader {
     }
 }
 
-private struct Root: Decodable {
-    let items: [Item]
-}
-
-private struct Item: Equatable {
-    public let id: UUID
-    public let description: String?
-    public let location: String?
-    public let imageURL: URL
-    
-    var feedItem: FeedItem {
-        return FeedItem(
-            id: id,
-            description: description,
-            location: location,
-            imageURL: imageURL
-        )
+private class FeedItemsMapper {
+    private struct Root: Decodable {
+        let items: [Item]
     }
-}
 
-extension Item: Decodable {
-    private enum CodingKeys: String, CodingKey {
-        case id
-        case description
-        case location
-        case imageURL = "image"
-    }
-    
-    public init(from decoder: Decoder) throws {
-        let container = try decoder.container(keyedBy: Self.CodingKeys)
-        id = try container.decode(UUID.self, forKey: .id)
-        description = try container.decodeIfPresent(String.self, forKey: .description)
-        location = try container.decodeIfPresent(String.self, forKey: .location)
-        let imageString = try container.decode(String.self, forKey: .imageURL)
-        guard let url = URL(string: imageString) else {
-            throw URLError(.badURL)
+    private struct Item: Equatable, Decodable {
+        public let id: UUID
+        public let description: String?
+        public let location: String?
+        public let imageURL: URL
+        
+        var feedItem: FeedItem {
+            return FeedItem(
+                id: id,
+                description: description,
+                location: location,
+                imageURL: imageURL
+            )
         }
-        imageURL = url
+        
+        private enum CodingKeys: String, CodingKey {
+            case id
+            case description
+            case location
+            case imageURL = "image"
+        }
+        
+        public init(from decoder: Decoder) throws {
+            let container = try decoder.container(keyedBy: CodingKeys.self)
+            id = try container.decode(UUID.self, forKey: .id)
+            description = try container.decodeIfPresent(String.self, forKey: .description)
+            location = try container.decodeIfPresent(String.self, forKey: .location)
+            let imageString = try container.decode(String.self, forKey: .imageURL)
+            guard let url = URL(string: imageString) else {
+                throw URLError(.badURL)
+            }
+            imageURL = url
+        }
+    }
+
+    static func map(_ data: Data, _ response: HTTPURLResponse) throws -> [FeedItem] {
+        guard response.statusCode == 200 else {
+            throw RemoteFeedLoader.Error.invalidData
+        }
+        return try JSONDecoder().decode(Root.self, from: data).items.map { $0.feedItem }
     }
 }
