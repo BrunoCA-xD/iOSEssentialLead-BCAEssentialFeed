@@ -15,6 +15,7 @@
 		AF0EF03B27638CE900A98CC0 /* RemoteFeedLoaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF0EF03A27638CE900A98CC0 /* RemoteFeedLoaderTests.swift */; };
 		AF0EF03E2763A14B00A98CC0 /* RemoteFeedLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF0EF03D2763A14B00A98CC0 /* RemoteFeedLoader.swift */; };
 		AF6BE131276AA7F3000D56A5 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6BE130276AA7F3000D56A5 /* HTTPClient.swift */; };
+		AF6BE133276AA82E000D56A5 /* FeedItemsMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6BE132276AA82E000D56A5 /* FeedItemsMapper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +38,7 @@
 		AF0EF03A27638CE900A98CC0 /* RemoteFeedLoaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteFeedLoaderTests.swift; sourceTree = "<group>"; };
 		AF0EF03D2763A14B00A98CC0 /* RemoteFeedLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteFeedLoader.swift; sourceTree = "<group>"; };
 		AF6BE130276AA7F3000D56A5 /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
+		AF6BE132276AA82E000D56A5 /* FeedItemsMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedItemsMapper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +119,7 @@
 			children = (
 				AF0EF03D2763A14B00A98CC0 /* RemoteFeedLoader.swift */,
 				AF6BE130276AA7F3000D56A5 /* HTTPClient.swift */,
+				AF6BE132276AA82E000D56A5 /* FeedItemsMapper.swift */,
 			);
 			path = FeedAPI;
 			sourceTree = "<group>";
@@ -233,6 +236,7 @@
 				AF0EF03E2763A14B00A98CC0 /* RemoteFeedLoader.swift in Sources */,
 				AF6BE131276AA7F3000D56A5 /* HTTPClient.swift in Sources */,
 				AF0EF02A2763865B00A98CC0 /* FeedLoader.swift in Sources */,
+				AF6BE133276AA82E000D56A5 /* FeedItemsMapper.swift in Sources */,
 				AF0EF0282763854600A98CC0 /* FeedItem.swift in Sources */,
 				AF0EF0112763847C00A98CC0 /* BCAEssentialFeed.docc in Sources */,
 			);
