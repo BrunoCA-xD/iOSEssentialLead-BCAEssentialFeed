@@ -23,12 +23,7 @@ public final class RemoteFeedLoader {
         client.get(from: url) { result  in
             switch result {
             case .success(let resultTuple):
-                if resultTuple.response.statusCode == 200,
-                   let items = try? FeedItemsMapper.map(resultTuple.data, resultTuple.response) {
-                    completion(.success(items))
-                } else {
-                    completion(.failure(.invalidData))
-                }
+                completion(FeedItemsMapper.map(resultTuple.data, resultTuple.response))
             case .failure:
                 completion(.failure(.connectivity))
             }
