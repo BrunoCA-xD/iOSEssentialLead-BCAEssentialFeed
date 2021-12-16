@@ -1,7 +1,7 @@
 import Foundation
 
-public final class RemoteFeedLoader {
-    public typealias Result = Swift.Result<[FeedItem], Error>
+public final class RemoteFeedLoader: FeedLoader {
+    public typealias Result = LoadFeedResult<Error>
     
     private let url: URL
     private let client: HTTPClient
