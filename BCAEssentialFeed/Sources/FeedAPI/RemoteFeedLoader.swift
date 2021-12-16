@@ -1,7 +1,7 @@
 import Foundation
 
 public final class RemoteFeedLoader: FeedLoader {
-    public typealias Result = LoadFeedResult<Error>
+    public typealias Result = Swift.Result<[FeedItem], Swift.Error>
     
     private let url: URL
     private let client: HTTPClient
@@ -27,7 +27,7 @@ public final class RemoteFeedLoader: FeedLoader {
             case .success(let resultTuple):
                 completion(FeedItemsMapper.map(resultTuple.data, resultTuple.response))
             case .failure:
-                completion(.failure(.connectivity))
+                completion(.failure(Error.connectivity))
             }
         }
     }
