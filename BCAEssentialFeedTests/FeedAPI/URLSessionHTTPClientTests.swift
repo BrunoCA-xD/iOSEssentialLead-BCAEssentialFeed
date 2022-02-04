@@ -1,7 +1,7 @@
 import XCTest
 import BCAEssentialFeed
 
-class URLSessionHTTPClient {
+class URLSessionHTTPClient: HTTPClient {
     private let session: URLSession
     
     init(session: URLSession = .shared) {
@@ -24,12 +24,11 @@ class URLSessionHTTPClient {
 }
 
 class URLSessionHTTPClientTests: XCTestCase {
-    
-    override class func setUp() {
+    override func setUp() {
         URLProtocolStub.startInterceptingRequests()
     }
     
-    override class func tearDown() {
+    override func tearDown() {
         URLProtocolStub.stopInterceptingRequests()
     }
     
@@ -68,7 +67,6 @@ class URLSessionHTTPClientTests: XCTestCase {
     func test_getFromURL_succeedsOnTTPURLResponseWithData() {
         let data = anyData()
         let response = anyHTTPURLResponse()
-        URLProtocolStub.stub(data: data, response: response, error: nil)
         
         let receivedValues = resultValuesFor(data: data, response: response, error: nil)
         
@@ -89,7 +87,7 @@ class URLSessionHTTPClientTests: XCTestCase {
 
     // MARK: - Helpers
     
-    private func makeSUT(file: StaticString = #filePath, line: UInt = #line) -> URLSessionHTTPClient {
+    private func makeSUT(file: StaticString = #filePath, line: UInt = #line) -> HTTPClient {
         let sut = URLSessionHTTPClient()
         trackForMemoryLeaks(sut, file: file, line: line)
         return sut
