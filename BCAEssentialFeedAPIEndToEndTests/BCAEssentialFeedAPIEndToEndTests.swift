@@ -5,20 +5,7 @@ import XCTest
 final class BCAEssentialFeedAPIEndToEndTests: XCTestCase {
     
     func test_endToEndServerGETFeedResult_matchesFixedTestAccountData() {
-        let testServerURL = URL(string: "https://essentialdeveloper.com/feed-case-study/test-api/feed")!
-        let client = URLSessionHTTPClient()
-        let loader = RemoteFeedLoader(url: testServerURL, client: client)
-        
-        let exp = expectation(description: "wait for load completion")
-        
-        var receivedResult: RemoteFeedLoader.Result?
-        loader.load { result in
-            receivedResult = result
-            exp.fulfill()
-        }
-        wait(for: [exp], timeout: 15)
-        
-        switch receivedResult {
+        switch getFeedResult() {
         case let .success(items)?:
             XCTAssertEqual(items.count, 8, "Expected 8 items in the test account feed")
             items.enumerated().forEach { (index, item) in
@@ -32,6 +19,23 @@ final class BCAEssentialFeedAPIEndToEndTests: XCTestCase {
     }
     
     // MARK: - Helper func
+    
+    private func getFeedResult() -> RemoteFeedLoader.Result?{
+        let testServerURL = URL(string: "https://essentialdeveloper.com/feed-case-study/test-api/feed")!
+        let client = URLSessionHTTPClient()
+        let loader = RemoteFeedLoader(url: testServerURL, client: client)
+        
+        let exp = expectation(description: "wait for load completion")
+        
+        var receivedResult: RemoteFeedLoader.Result?
+        loader.load { result in
+            receivedResult = result
+            exp.fulfill()
+        }
+        wait(for: [exp], timeout: 15)
+        
+        return receivedResult
+    }
     
     private func XCTAssertItemsEquals(_ item1: FeedItem?, _ item2: FeedItem?, comparedIndex: Int, file: StaticString = #filePath, line: UInt = #line) {
         let failMessageSuffix = "does not match at index: \(comparedIndex)"
