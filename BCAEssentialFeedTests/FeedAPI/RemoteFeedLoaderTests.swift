@@ -68,6 +68,20 @@ class RemoteFeedLoaderTests: XCTestCase {
         }
     }
     
+    func test_load_whenItemHasABadImageURL_shouldReturnInvalidData() {
+        let (sut, client) = makeSUT()
+        
+        let itemJSON = [
+            "id": UUID().uuidString,
+            "image": "{a-bad-URL}"
+        ]
+        
+        expect(sut, toCompletWith: failure(.invalidData)) {
+            let json = makeItemsJSON([itemJSON])
+            client.complete(withStatusCode: 200, data: json)
+        }
+    }
+    
     func test_load_deliversItemsOn200HTTPResponseWithJSONItems() {
         let (sut, client) = makeSUT()
         
