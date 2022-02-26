@@ -1,4 +1,0 @@
-OS: OSX
-OSX_image: xcode13.2.1
-laguange: swift
-script: xcodebuild clean build test -project BCAEssentialFeed/BCAEssentialFeed.xcodeproj -scheme "CI" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO
