@@ -6,10 +6,10 @@ final class BCAEssentialFeedAPIEndToEndTests: XCTestCase {
     
     func test_endToEndServerGETFeedResult_matchesFixedTestAccountData() {
         switch getFeedResult() {
-        case let .success(items)?:
-            XCTAssertEqual(items.count, 8, "Expected 8 items in the test account feed")
-            items.enumerated().forEach { (index, item) in
-                XCTAssertItemsEquals(item, expectedItem(at: index), comparedIndex: index)
+        case let .success(feed)?:
+            XCTAssertEqual(feed.count, 8, "Expected 8 items in the test account feed")
+            feed.enumerated().forEach { (index, item) in
+                XCTAssertImagesEquals(item, expectedImage(at: index), comparedIndex: index)
             }
         case let .failure(error)?:
             XCTFail("Expected success, got \(error) instead")
@@ -38,26 +38,26 @@ final class BCAEssentialFeedAPIEndToEndTests: XCTestCase {
         return receivedResult
     }
     
-    private func XCTAssertItemsEquals(_ item1: FeedItem?, _ item2: FeedItem?, comparedIndex: Int, file: StaticString = #filePath, line: UInt = #line) {
+    private func XCTAssertImagesEquals(_ image1: FeedImage?, _ image2: FeedImage?, comparedIndex: Int, file: StaticString = #filePath, line: UInt = #line) {
         let failMessageSuffix = "does not match at index: \(comparedIndex)"
         
-        if item1?.id != item2?.id {
+        if image1?.id != image2?.id {
             XCTFail("Items id \(failMessageSuffix)", file: file, line: line)
-        } else if item1?.description != item2?.description {
+        } else if image1?.description != image2?.description {
             XCTFail("Items description \(failMessageSuffix)", file: file, line: line)
-        } else if item1?.location != item2?.location {
+        } else if image1?.location != image2?.location {
             XCTFail("Items location \(failMessageSuffix)", file: file, line: line)
-        } else if item1?.imageURL != item2?.imageURL {
+        } else if image1?.url != image2?.url {
             XCTFail("Items imageURL \(failMessageSuffix)", file: file, line: line)
         }
     }
     
-    private func expectedItem(at index: Int) -> FeedItem? {
-        FeedItem(
+    private func expectedImage(at index: Int) -> FeedImage? {
+        FeedImage(
             id: id(at: index),
             description: description(at: index),
             location: location(at: index),
-            imageURL: imageURL(at: index)
+            url: url(at: index)
         )
     }
     
@@ -100,7 +100,7 @@ final class BCAEssentialFeedAPIEndToEndTests: XCTestCase {
         ][index]
     }
     
-    private func imageURL(at index: Int) -> URL {
+    private func url(at index: Int) -> URL {
         return URL(string: [
             "https://url-1.com",
             "https://url-2.com",
