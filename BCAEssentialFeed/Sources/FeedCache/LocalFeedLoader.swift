@@ -2,6 +2,7 @@ import Foundation
 
 public final class LocalFeedLoader {
     public typealias SaveResult = Error?
+    public typealias LoadResult = Swift.Result<[FeedImage], Swift.Error>
     
     private let store: FeedStore
     private let currentDate: () -> Date
@@ -23,8 +24,12 @@ public final class LocalFeedLoader {
         }
     }
     
-    public func load(completion: @escaping (Error?) -> ()) {
-        store.retrieve(completion: completion)
+    public func load(completion: @escaping (LoadResult) -> ()) {
+        store.retrieve { error in
+            if let error = error {
+                completion(.failure(error))
+            }
+        }
     }
     
     // MARK: helper
