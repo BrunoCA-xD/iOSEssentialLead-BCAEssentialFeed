@@ -3,7 +3,7 @@ import BCAEssentialFeed
 
 final class CacheFeedUseCaseTests: XCTestCase {
 
-    func test_inti_doesNotMessageStoreUponCreation() {
+    func test_init_doesNotMessageStoreUponCreation() {
         let (_, store) = makeSUT()
         XCTAssertEqual(store.receivedMessages, [])
     }
