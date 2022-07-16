@@ -60,7 +60,7 @@ class CodableFeedStore {
         }
     }
     
-    func retrive(completion: @escaping FeedStore.RetrievalCompletion) {
+    func retrieve(completion: @escaping FeedStore.RetrievalCompletion) {
         guard let data = try? Data(contentsOf: storeURL) else {
             return completion(.empty)
         }
@@ -248,7 +248,7 @@ final class CodableFeedStoreTests: XCTestCase {
     ) {
         let exp = expectation(description: "wait for cache retrieval")
         
-        sut.retrive { retrievedResult in
+        sut.retrieve { retrievedResult in
             switch (expectedResult, retrievedResult) {
             case (.empty, .empty), (.failure, .failure):
                 break
