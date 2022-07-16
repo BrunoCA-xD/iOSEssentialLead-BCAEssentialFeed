@@ -33,6 +33,7 @@
 		AFC3CCFF287B81EB00F9C8A7 /* FeedCachePolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC3CCFE287B81EB00F9C8A7 /* FeedCachePolicy.swift */; };
 		AFCBCD2C27AD676100D4D7A8 /* XCTestCase+MemoryLeakTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCBCD2B27AD676100D4D7A8 /* XCTestCase+MemoryLeakTracking.swift */; };
 		AFCBCD2E27ADB90D00D4D7A8 /* URLSessionHTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCBCD2D27ADB90D00D4D7A8 /* URLSessionHTTPClient.swift */; };
+		AFF8E02B288343AE00EBE4E8 /* CodableFeedStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF8E02A288343AE00EBE4E8 /* CodableFeedStore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +80,7 @@
 		AFC3CCFE287B81EB00F9C8A7 /* FeedCachePolicy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCachePolicy.swift; sourceTree = "<group>"; };
 		AFCBCD2B27AD676100D4D7A8 /* XCTestCase+MemoryLeakTracking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+MemoryLeakTracking.swift"; sourceTree = "<group>"; };
 		AFCBCD2D27ADB90D00D4D7A8 /* URLSessionHTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionHTTPClient.swift; sourceTree = "<group>"; };
+		AFF8E02A288343AE00EBE4E8 /* CodableFeedStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableFeedStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -194,6 +196,7 @@
 				AFB2DE072811D62300D0DAC8 /* FeedStore.swift */,
 				AF5E266E282DDD0D00C20F88 /* LocalFeedImage.swift */,
 				AFC3CCFE287B81EB00F9C8A7 /* FeedCachePolicy.swift */,
+				AFF8E02A288343AE00EBE4E8 /* CodableFeedStore.swift */,
 			);
 			path = FeedCache;
 			sourceTree = "<group>";
@@ -382,6 +385,7 @@
 				AF0EF02A2763865B00A98CC0 /* FeedLoader.swift in Sources */,
 				AF6BE133276AA82E000D56A5 /* FeedItemsMapper.swift in Sources */,
 				AF5E266D282DDCC500C20F88 /* RemoteFeedItem.swift in Sources */,
+				AFF8E02B288343AE00EBE4E8 /* CodableFeedStore.swift in Sources */,
 				AFC3CCFF287B81EB00F9C8A7 /* FeedCachePolicy.swift in Sources */,
 				AF0EF0282763854600A98CC0 /* FeedImage.swift in Sources */,
 				AFB2DE062811D57900D0DAC8 /* LocalFeedLoader.swift in Sources */,
