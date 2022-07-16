@@ -125,9 +125,8 @@ final class CodableFeedStoreTests: XCTestCase, FailableFeedStore {
         expect(sut, toRetrieve: .empty)
     }
     
-    /* It seems like you have different permissions on your Mac. So you need a custom `noDeletePermissionURL`
     func test_delete_deliversErrorOnDeletionError() {
-        let noDeletePermissionURL = cachesDirectory()
+        let noDeletePermissionURL = noDeletePermissionURL()
         let sut = makeSUT(storeURL: noDeletePermissionURL)
         
         let deletionError = deleteCache(from: sut)
@@ -136,13 +135,13 @@ final class CodableFeedStoreTests: XCTestCase, FailableFeedStore {
     }
     
     func test_delete_hasNoSideEffectsOnDeletionError() {
-        let noDeletePermissionURL = cachesDirectory()
+        let noDeletePermissionURL = noDeletePermissionURL()
         let sut = makeSUT(storeURL: noDeletePermissionURL)
         
         deleteCache(from: sut)
         
         expect(sut, toRetrieve: .empty)
-    }*/
+    }
     
     func test_storeSideEffects_runSerially() {
         let sut = makeSUT()
@@ -243,6 +242,10 @@ final class CodableFeedStoreTests: XCTestCase, FailableFeedStore {
     
     private func cachesDirectory() -> URL {
         FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask).first!
+    }
+    
+    private func noDeletePermissionURL() -> URL {
+        return FileManager.default.urls(for: .cachesDirectory, in: .systemDomainMask).first!
     }
     
     private func setupEmptyStoreState() {
