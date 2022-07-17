@@ -1,7 +1,7 @@
 import XCTest
 import BCAEssentialFeed
 
-final class CoreDataFeedStoreTests: XCTestCase, FailableFeedStore {
+final class CoreDataFeedStoreTests: XCTestCase, FeedStoreSpecs {
     
     func test_retrieve_deliversEmptyOnEmptyCache() {
         let sut = makeSUT()
@@ -43,30 +43,6 @@ final class CoreDataFeedStoreTests: XCTestCase, FailableFeedStore {
         let sut = makeSUT()
         
         assertThatInsertOverridesPreviouslyInsertedCacheValues(on: sut)
-    }
-    
-    func test_retrieve_deliversFailureOnRetrievalError() {
-        
-    }
-    
-    func test_insert_deliversErrorOnInsertionError() {
-        
-    }
-    
-    func test_insert_hasNoSideEffectsOnInsertionError() {
-        
-    }
-    
-    func test_delete_deliversErrorOnDeletionError() {
-        
-    }
-    
-    func test_delete_hasNoSideEffectsOnDeletionError() {
-        
-    }
-    
-    func test_retrieve_hasNoSideEffectsOnFailure() {
-        
     }
     
     func test_delete_deliversNoErrorOnEmptyCache() {
