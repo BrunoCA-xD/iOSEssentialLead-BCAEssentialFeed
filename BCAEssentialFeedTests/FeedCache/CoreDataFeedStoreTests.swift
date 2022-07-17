@@ -90,4 +90,10 @@ final class CoreDataFeedStoreTests: XCTestCase, FailableFeedStore {
     func test_storeSideEffects_runSerially() {
         
     }
+    
+    private func makeSUT(file: StaticString = #file, line: UInt = #line) -> FeedStore {
+        let sut = CoreDataFeedStore()
+        trackForMemoryLeaks(sut)
+        return sut
+    }
 }
