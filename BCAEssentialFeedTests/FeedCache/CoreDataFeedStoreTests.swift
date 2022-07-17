@@ -32,6 +32,12 @@ final class CoreDataFeedStoreTests: XCTestCase, FailableFeedStore {
         
         assertThatInsertDeliversNoErrorOnEmptyCache(on: sut)
     }
+
+    func test_insert_deliversNoErrorOnNonEmptyCache() {
+        let sut = makeSUT()
+        
+        assertThatInsertDeliversNoErrorOnNonEmptyCache(on: sut)
+    }
     
     func test_retrieve_deliversFailureOnRetrievalError() {
         
@@ -54,10 +60,6 @@ final class CoreDataFeedStoreTests: XCTestCase, FailableFeedStore {
     }
     
     func test_retrieve_hasNoSideEffectsOnFailure() {
-        
-    }
-    
-    func test_insert_deliversNoErrorOnNonEmptyCache() {
         
     }
     
