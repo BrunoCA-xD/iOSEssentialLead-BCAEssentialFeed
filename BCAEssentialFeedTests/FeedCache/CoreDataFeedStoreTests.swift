@@ -8,8 +8,8 @@ final class CoreDataFeedStoreTests: XCTestCase, FailableFeedStore {
         
         assertThatRetrieveDeliversEmptyOnEmptyCache(on: sut)
     }
-    
-    func test_retrieve_hasNoSideEffectsOnFailure() {
+
+    func test_retrieve_hasNoSideEffectsOnEmptyCache() {
         let sut = makeSUT()
         
         assertThatRetrieveHasNoSideEffectsOnEmptyCache(on: sut)
@@ -41,7 +41,7 @@ final class CoreDataFeedStoreTests: XCTestCase, FailableFeedStore {
         
     }
     
-    func test_retrieve_hasNoSideEffectsOnEmptyCache() {
+    func test_retrieve_hasNoSideEffectsOnFailure() {
         
     }
     
