@@ -23,11 +23,13 @@ final class CoreDataFeedStoreTests: XCTestCase, FailableFeedStore {
         assertThatRetrieveDeliversEmptyOnEmptyCache(on: sut)
     }
     
-    func test_retrieve_deliversFailureOnRetrievalError() {
+    func test_retrieve_hasNoSideEffectsOnFailure() {
+        let sut = CoreDataFeedStore()
         
+        assertThatRetrieveHasNoSideEffectsOnEmptyCache(on: sut)
     }
     
-    func test_retrieve_hasNoSideEffectsOnFailure() {
+    func test_retrieve_deliversFailureOnRetrievalError() {
         
     }
     
