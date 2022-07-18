@@ -14,14 +14,24 @@
 			<key>orderHint</key>
 			<integer>1</integer>
 		</dict>
-		<key>CI.xcscheme_^#shared#^_</key>
+		<key>BCAEssentialFeedCacheIntegrationTests.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>2</integer>
 		</dict>
+		<key>CI.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>AF00B92128862963001DE1AE</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>AF0EF00B2763847B00A98CC0</key>
 		<dict>
 			<key>primary</key>
