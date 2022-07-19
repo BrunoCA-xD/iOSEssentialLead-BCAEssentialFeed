@@ -12,6 +12,7 @@
 		AF00B92528862963001DE1AE /* BCAEssentialFeedCacheIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF00B92428862963001DE1AE /* BCAEssentialFeedCacheIntegrationTests.swift */; };
 		AF00B92628862963001DE1AE /* BCAEssentialFeed.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF0EF00C2763847B00A98CC0 /* BCAEssentialFeed.framework */; };
 		AF00B92C28862D03001DE1AE /* XCTestCase+MemoryLeakTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCBCD2B27AD676100D4D7A8 /* XCTestCase+MemoryLeakTracking.swift */; };
+		AF00B92D28862FA4001DE1AE /* FeedCacheTestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC3CCFC287B5B5600F9C8A7 /* FeedCacheTestHelpers.swift */; };
 		AF0EF0112763847C00A98CC0 /* BCAEssentialFeed.docc in Sources */ = {isa = PBXBuildFile; fileRef = AF0EF0102763847C00A98CC0 /* BCAEssentialFeed.docc */; };
 		AF0EF0172763847C00A98CC0 /* BCAEssentialFeed.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF0EF00C2763847B00A98CC0 /* BCAEssentialFeed.framework */; };
 		AF0EF01D2763847C00A98CC0 /* BCAEssentialFeed.h in Headers */ = {isa = PBXBuildFile; fileRef = AF0EF00F2763847C00A98CC0 /* BCAEssentialFeed.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -485,6 +486,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AF00B92528862963001DE1AE /* BCAEssentialFeedCacheIntegrationTests.swift in Sources */,
+				AF00B92D28862FA4001DE1AE /* FeedCacheTestHelpers.swift in Sources */,
 				AF00B92C28862D03001DE1AE /* XCTestCase+MemoryLeakTracking.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
