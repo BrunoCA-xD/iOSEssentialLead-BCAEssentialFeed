@@ -39,7 +39,7 @@ class BCAEssentialFeedCacheIntegrationTests: XCTestCase {
         let firstFeed = uniqueImageFeed().models
         let latestFeed = uniqueImageFeed().models
         
-        save(firstFeed, with: sutToPerformFirstSave)
+        save(firstFeed, with: sutT oPerformFirstSave)
         save(latestFeed, with: sutToPerformLastSave)
         
         expect(sutToPerformLoad, toLoad: latestFeed)
