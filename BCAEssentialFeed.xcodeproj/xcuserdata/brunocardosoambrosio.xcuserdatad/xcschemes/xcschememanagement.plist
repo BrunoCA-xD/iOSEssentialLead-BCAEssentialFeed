@@ -12,12 +12,17 @@
 		<key>BCAEssentialFeedAPIEndToEndTests.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>1</integer>
+			<integer>3</integer>
 		</dict>
 		<key>BCAEssentialFeedCacheIntegrationTests.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>2</integer>
+		</dict>
+		<key>BCAEssentialFeediOS.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>4</integer>
 		</dict>
 		<key>CI.xcscheme_^#shared#^_</key>
 		<dict>
@@ -33,6 +38,21 @@
 			<true/>
 		</dict>
 		<key>AF0EF00B2763847B00A98CC0</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>AF1C18E627C9091D007A9A2E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>AF46F7322898568900568C93</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>AF46F7392898568900568C93</key>
 		<dict>
 			<key>primary</key>
 			<true/>
