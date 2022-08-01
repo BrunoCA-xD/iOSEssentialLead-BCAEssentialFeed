@@ -26,6 +26,8 @@
 		AF288AE0276CC48E003863C4 /* URLSessionHTTPClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF288ADF276CC48E003863C4 /* URLSessionHTTPClientTests.swift */; };
 		AF46F73B2898568900568C93 /* BCAEssentialFeediOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF46F7332898568900568C93 /* BCAEssentialFeediOS.framework */; };
 		AF46F74B289859AC00568C93 /* FeedViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF46F74A289859AC00568C93 /* FeedViewControllerTests.swift */; };
+		AF46F74D28985DD700568C93 /* BCAEssentialFeed.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF0EF00C2763847B00A98CC0 /* BCAEssentialFeed.framework */; };
+		AF46F74E28985DD700568C93 /* BCAEssentialFeed.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AF0EF00C2763847B00A98CC0 /* BCAEssentialFeed.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		AF579E3E280F7D8F009C9FD0 /* CacheFeedUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF579E3D280F7D8F009C9FD0 /* CacheFeedUseCaseTests.swift */; };
 		AF5A6512283013F20033C890 /* LoadFeedFromCacheUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5A6511283013F20033C890 /* LoadFeedFromCacheUseCaseTests.swift */; };
 		AF5A6515283015800033C890 /* FeedStoreSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5A6514283015800033C890 /* FeedStoreSpy.swift */; };
@@ -77,7 +79,28 @@
 			remoteGlobalIDString = AF46F7322898568900568C93;
 			remoteInfo = BCAEssentialFeediOS;
 		};
+		AF46F74F28985DD700568C93 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AF0EF0032763847B00A98CC0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AF0EF00B2763847B00A98CC0;
+			remoteInfo = BCAEssentialFeed;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		AF46F75128985DD700568C93 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				AF46F74E28985DD700568C93 /* BCAEssentialFeed.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		AF00B91A2886266C001DE1AE /* ManagedCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagedCache.swift; sourceTree = "<group>"; };
@@ -156,6 +179,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF46F74D28985DD700568C93 /* BCAEssentialFeed.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -188,6 +212,7 @@
 				AF46F7342898568900568C93 /* BCAEssentialFeediOS */,
 				AF46F73E2898568900568C93 /* BCAEssentialFeediOSTests */,
 				AF0EF00D2763847B00A98CC0 /* Products */,
+				AF46F74C28985DD700568C93 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -276,6 +301,13 @@
 				AF46F74A289859AC00568C93 /* FeedViewControllerTests.swift */,
 			);
 			path = BCAEssentialFeediOSTests;
+			sourceTree = "<group>";
+		};
+		AF46F74C28985DD700568C93 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		AF579E3B280F7D4A009C9FD0 /* FeedCache */ = {
@@ -451,10 +483,12 @@
 				AF46F72F2898568900568C93 /* Sources */,
 				AF46F7302898568900568C93 /* Frameworks */,
 				AF46F7312898568900568C93 /* Resources */,
+				AF46F75128985DD700568C93 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				AF46F75028985DD700568C93 /* PBXTargetDependency */,
 			);
 			name = BCAEssentialFeediOS;
 			productName = BCAEssentialFeediOS;
@@ -677,6 +711,11 @@
 			isa = PBXTargetDependency;
 			target = AF46F7322898568900568C93 /* BCAEssentialFeediOS */;
 			targetProxy = AF46F73C2898568900568C93 /* PBXContainerItemProxy */;
+		};
+		AF46F75028985DD700568C93 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AF0EF00B2763847B00A98CC0 /* BCAEssentialFeed */;
+			targetProxy = AF46F74F28985DD700568C93 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
