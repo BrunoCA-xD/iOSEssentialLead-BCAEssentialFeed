@@ -1,5 +1,7 @@
 import Foundation
 
 public protocol FeedLoader {
-    func load(completion: @escaping (Result<[FeedImage], Error>) -> Void)
+    typealias Result = Swift.Result<[FeedImage], Error>
+    
+    func load(completion: @escaping (Result) -> Void)
 }
