@@ -7,4 +7,5 @@ class FeedImageCell: UITableViewCell {
     let descriptionLabel = UILabel()
     let feedImageContainer = UIView()
     let feedImageView = UIImageView()
+    let feedImageRetryButton = UIButton()
 }
