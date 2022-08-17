@@ -250,6 +250,11 @@ final class FeedViewControllerTests: XCTestCase {
             let error = NSError(domain: "an error", code: 0)
             imageRequests[index].completion(.failure(error))
         }
+        
+        func completeFeedLoadingWithError(at index: Int = 0) {
+            let error = NSError(domain: "an error", code: 0)
+            completions[index](.failure(error))
+        }
     }
 }
 
