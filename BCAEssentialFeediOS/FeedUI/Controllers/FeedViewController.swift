@@ -1,5 +1,4 @@
 import UIKit
-import BCAEssentialFeed
 
 public final class FeedViewController: UITableViewController, UITableViewDataSourcePrefetching {
     private var refreshController: FeedRefreshViewController?
