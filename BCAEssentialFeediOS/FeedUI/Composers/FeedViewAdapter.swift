@@ -1,5 +1,6 @@
 import Foundation
 import UIKit
+import BCAEssentialFeed
 
 final class FeedViewAdapter: FeedView {
     private weak var controller: FeedViewController?
