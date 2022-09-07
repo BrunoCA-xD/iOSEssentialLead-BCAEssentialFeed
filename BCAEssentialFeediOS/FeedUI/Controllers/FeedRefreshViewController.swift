@@ -18,10 +18,6 @@ final class FeedRefreshViewController: NSObject, FeedLoadingView {
     }
     
     func display(_ viewModel: FeedLoadingViewModel) {
-        guard Thread.isMainThread else {
-           return DispatchQueue.main.async(execute: { [weak self] in self?.display(viewModel)})
-        }
-        
         if viewModel.isLoading {
             view.beginRefreshing()
         } else {

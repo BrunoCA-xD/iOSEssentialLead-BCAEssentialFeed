@@ -3,15 +3,7 @@ import UIKit
 public final class FeedViewController: UITableViewController, UITableViewDataSourcePrefetching {
     private var refreshController: FeedRefreshViewController?
     var tableModel = [FeedImageCellController]() {
-        didSet {
-            if Thread.isMainThread {
-                tableView.reloadData()
-            } else {
-                DispatchQueue.main.async { [weak self] in
-                    self?.tableView.reloadData()
-                }
-            }
-        }
+        didSet { self.tableView.reloadData() }
     }
     
     convenience init(refreshController: FeedRefreshViewController) {
