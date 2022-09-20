@@ -58,17 +58,31 @@ final class FeedPresenter {
         errorView.display(.error(errorMessage: feedLoadError))
         loadingView.display(FeedLoadingViewModel(isLoading: false))
     }
+    static var title: String {
+        NSLocalizedString(
+            "FEED_VIEW_TITLE",
+            tableName: "Feed",
+            bundle: Bundle(for: FeedPresenter.self),
+            comment: "Title for the feed view"
+        )
+    }
     
     private var feedLoadError: String {
-        NSLocalizedString("FEED_VIEW_CONNECTION_ERROR",
-                          tableName: "Feed",
-                          bundle: Bundle(for: FeedPresenter.self),
-                          comment: "Error message displayed when we can't load the image feed from the server"
+        NSLocalizedString(
+            "FEED_VIEW_CONNECTION_ERROR",
+            tableName: "Feed",
+            bundle: Bundle(for: FeedPresenter.self),
+            comment: "Error message displayed when we can't load the image feed from the server"
         )
     }
 }
 
 final class FeedPresenterTests: XCTestCase {
+    
+    func test_title_isLocalized() {
+        XCTAssertEqual(FeedPresenter.title, localized("FEED_VIEW_TITLE"))
+    }
+     
     func test_init_doesNotSendMessagesToView() {
         let (_, view) = makeSUT()
 
