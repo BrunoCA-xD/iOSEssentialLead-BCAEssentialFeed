@@ -1,4 +1,5 @@
 import UIKit
+import BCAEssentialFeed
 
 protocol FeedRefreshViewControllerDelegate {
     func didRequestFeedRefresh()
