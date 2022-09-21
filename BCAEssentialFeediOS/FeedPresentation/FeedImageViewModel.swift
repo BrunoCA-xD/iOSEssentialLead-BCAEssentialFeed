@@ -1,4 +1,3 @@
-import UIKit
 import BCAEssentialFeed
 
 struct FeedImageViewModel<Image> {
